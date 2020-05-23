@@ -1,0 +1,15 @@
+*.pyc
+*.DS_Store
+/build
+/dist
+/venv
+*.egg-info
+*-blx.bib
+*.blg
+*.aux
+*.log
+*.run.xml
+*.synctex.gz
+*.tex_autosave
+*.out
+*.dvi
