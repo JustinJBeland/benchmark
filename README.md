@@ -25,7 +25,9 @@ python sfd/test/test_decomp.py
 ```
 
 # Datasets:
-* UCI breastcancer dataset (cancer) 
+* UCI breastcancer dataset (cancer)  (regression, single output) (n=194, D=33)
+* UCI gas sensor dataset (gas)  (regression, single output) (n=2565, D=128)
+* UCI residential building dataset (residential)  (regression, two outputs) (n=372, D=103)
 
 # Test functions
 * Rosenbrock (dim = n)
