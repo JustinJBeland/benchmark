@@ -27,6 +27,8 @@ python benchmark/test/test_gp.py
 * UCI breastcancer dataset (cancer)  (regression, single output) (n=194, D=33)
 * UCI gas sensor dataset (gas)  (regression, single output) (n=2565, D=128)
 * UCI residential building dataset (residential)  (regression, two outputs) (n=372, D=103)
+* UCI geographical original of music (music68)  (regression, two outputs) (n=1059, D=68)
+* UCI geographical original of music (music116)  (regression, two outputs) (n=1059, D=116)
 
 # Test functions
 * Rosenbrock (dim = n)
