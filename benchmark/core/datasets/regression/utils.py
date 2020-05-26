@@ -22,6 +22,12 @@ def load_data(dataset_name):
         n, D, X, Y = load_txt_music(filename)
     elif dataset_name == 'music116':
         n, D, X, Y = load_txt_music(filename)
+    elif dataset_name == 'yacht':
+        n, D, X, Y = load_mat(filename)
+    elif dataset_name == 'wine':
+        n, D, X, Y = load_mat(filename)
+    elif dataset_name == 'fertility':
+        n, D, X, Y = load_mat(filename)
 
     return n, D, X, Y
 
