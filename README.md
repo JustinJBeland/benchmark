@@ -20,8 +20,7 @@ python setup.py develop
 
 # Examples
 ```
-python sfd/test/test_gp.py 
-python sfd/test/test_decomp.py 
+python benchmark/test/test_gp.py 
 ```
 
 # Datasets:
