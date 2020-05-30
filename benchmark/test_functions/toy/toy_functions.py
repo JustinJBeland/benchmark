@@ -1,7 +1,11 @@
 import numpy as np
 
 def rosenbrock(x):
-    return np.sum(100.0*(x[:,1:]-x[:,:-1]**2.0)**2.0 + (1-x[:,:-1])**2.0,axis=1,keepdims=True)
+    return np.sum(100.0*(x[:,1:]-x[:,:-1]**2.0)**2.0 + (1-x[:,:-1])**2.0, axis=1, keepdims=True)
+
+def rastrigin(x):
+    D = np.shape(x)[1]
+    return 10.0*D + np.sum(x**2-10.0*np.cos(2.0*np.pi*x), axis=1, keepdims=True)
 
 def branin(x):
     x1 = x[:, 0]
@@ -12,16 +16,18 @@ def branin(x):
 def quadratic(x):
     return np.sum(x**2.0, axis=1, keepdims=True)
 
-
-
+def product_of_sines(x):
+    return np.reshape(10.0*np.sin(x[:,0]),[-1,1]) * np.product( np.sin(x), axis=1, keepdims=True)
 
 
 def get_function_definition(objective, D):
 
     # specify a dictionary with function definitions and corresponding bounds
     opt_options = {'rosenbrock':{'fun':rosenbrock, 'lb':np.array([-1.5]*D), 'ub':np.array([3.0]*D)},
+                   'rastrigin':{'fun':rastrigin, 'lb':np.array([-5.12]*D), 'ub':np.array([5.12]*D)},
                    'branin':{'fun':branin, 'lb':np.array([-5.0] + [0.0]*(D-1)), 'ub':np.array([10.0] + [15.0]*(D-1))},
-                   'quadratic':{'fun':quadratic,'lb':np.array([-1.0]*D), 'ub':np.array([1.0]*D)}}
+                   'quadratic':{'fun':quadratic,'lb':np.array([-1.0]*D), 'ub':np.array([1.0]*D)},
+                   'product_of_sines':{'fun':product_of_sines,'lb':np.array([-np.pi]*D), 'ub':np.array([0.0]*D)}}
     
     def_fun = opt_options[objective]['fun']
     lb = opt_options[objective]['lb']
