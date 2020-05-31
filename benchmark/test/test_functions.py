@@ -1,10 +1,12 @@
 from benchmark.test_functions.toy.toy_functions import get_function_definition
 import torch
 import matplotlib.pyplot as plt
+import numpy as np
+import math
 
 # define problem
-n = 100000
-D = 2
+n = 10000
+D = 10
 objective = 'product_of_sines'
 
 # get function info
@@ -28,6 +30,13 @@ if D == 2:
     plt.scatter(X_scaled[:,0], X_scaled[:,1], c=Y_scaled[:,0],marker='.',alpha=0.3)
     plt.colorbar()
     plt.show()
+
+
+if objective == 'product_of_sines':
+    x_test = np.reshape(-np.ones(D)*math.pi/2.0,[1,-1])
+    print('minima is at ', fun(x_test))
+
+
 
 
 
