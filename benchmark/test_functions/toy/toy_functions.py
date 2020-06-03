@@ -27,7 +27,7 @@ def get_function_definition(objective, D):
                    'rastrigin':{'fun':rastrigin, 'lb':np.array([-5.12]*D), 'ub':np.array([5.12]*D)},
                    'branin':{'fun':branin, 'lb':np.array([-5.0] + [0.0]*(D-1)), 'ub':np.array([10.0] + [15.0]*(D-1))},
                    'quadratic':{'fun':quadratic,'lb':np.array([-1.0]*D), 'ub':np.array([1.0]*D)},
-                   'product_of_sines':{'fun':product_of_sines,'lb':np.array([-np.pi/2.0-1.0]*D), 'ub':np.array([-np.pi/2.0+1.0]*D)}}
+                   'product_of_sines':{'fun':product_of_sines,'lb':np.array([-np.pi/2.0-1.3]*D), 'ub':np.array([-np.pi/2.0+1.3]*D)}}
     
     def_fun = opt_options[objective]['fun']
     lb = opt_options[objective]['lb']
