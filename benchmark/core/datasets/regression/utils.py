@@ -28,6 +28,9 @@ def load_data(dataset_name):
         n, D, X, Y = load_mat(filename)
     elif dataset_name == 'fertility':
         n, D, X, Y = load_mat(filename)
+    elif dataset_name == 'diabetes':
+        n, D, X, Y = load_text(filename)
+
 
     return n, D, X, Y
 
@@ -50,6 +53,29 @@ def load_mat(filename):
     Y = data[:,-1:]
 
     return n, D, X, Y
+
+def load_text(filename):
+
+    # add extension 
+    filename = filename + '.txt'
+
+    # load the data anc convert to numpy array
+    data = pd.read_csv(filename)
+    data = data.values
+
+    # remove header
+    data = np.array(data).astype(np.float)
+
+    # extract the inputs and out puts (longitude only)
+    X = data[:, :-1]
+    Y = np.reshape(data[:, -1:],[-1,1])
+    
+    # find the number of samples and dimensionality
+    n = X.shape[0]
+    D = X.shape[1]
+
+    return n, D, X, Y
+
 
 def load_txt_music(filename):
 
