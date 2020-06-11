@@ -5,9 +5,10 @@ import numpy as np
 import math
 
 # define problem
-n = 10000
-D = 10
-objective = 'product_of_sines'
+n = 100000
+D = 2
+objective = 'branin'
+print('objective function: ', objective)
 
 # get function info
 fun, lb_x, ub_x = get_function_definition(objective, D)
