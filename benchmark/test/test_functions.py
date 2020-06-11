@@ -5,9 +5,9 @@ import numpy as np
 import math
 
 # define problem
-n = 100000
-D = 2
-objective = 'branin'
+n = 10000
+D = 20
+objective = 'rosenbrock10D'
 print('objective function: ', objective)
 
 # get function info
