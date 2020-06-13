@@ -4,7 +4,7 @@ def rosenbrock(x):
     return np.sum(100.0*(x[:,1:]-x[:,:-1]**2.0)**2.0 + (1-x[:,:-1])**2.0, axis=1, keepdims=True)
 
 def rosenbrock10D(x):
-	return np.sum(100.0*(x[:,1:10]-x[:,0:9]**2.0)**2.0 + (1-x[:,0:9])**2.0, axis=1, keepdims=True)
+    return np.sum(100.0*(x[:,1:10]-x[:,0:9]**2.0)**2.0 + (1-x[:,0:9])**2.0, axis=1, keepdims=True)
 
 def rastrigin(x):
     D = np.shape(x)[1]
